@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-// Configuración global de rutas
+// ConfiguraciÃ³n global de rutas
 app.use(require('./routes/index'));
 
 
