@@ -21,6 +21,7 @@ app.use(require('./routes/index'));
 
 
 mongoose.connect(process.env.URLDB, (err, res) => {
+    // { useNewUrlParser: true, useCreateIndex: true },
 
     if (err) throw err;
 
