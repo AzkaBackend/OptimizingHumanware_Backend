@@ -1,7 +1,7 @@
 const express = require('express');
 
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 
 const Empresa = require('../models/empresa');
 
@@ -39,17 +39,21 @@ app.post('/login', (req, res) => {
                     message: 'Empresa o (contraseña) incorrectos'
                 }
             });
+        } else {
+            return res.status(200).json({
+                message: `Bienvenido, ${ body.email }`
+            });
         }
 
-        let token = jwt.sign({
-            empresa: empresaDB
-        }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
+        // let token = jwt.sign({
+        //     empresa: empresaDB
+        // }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
 
-        res.json({
-            ok: true,
-            empresa: empresaDB,
-            token
-        });
+        // res.json({
+        //     ok: true,
+        //     empresa: empresaDB,
+        //     token
+        // });
 
 
     });
