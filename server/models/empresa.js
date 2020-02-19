@@ -35,11 +35,9 @@ let empresaSchema = new Schema({
     },
     estado: {
         type: String,
-        required: [true, 'El estado o ciudad son necesarios']
     },
     direccion: {
         type: String,
-        required: [true, 'La dirección es necesaria']
     },
     numeroTelefono: {
         type: String,
